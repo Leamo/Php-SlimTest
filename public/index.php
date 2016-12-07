@@ -18,9 +18,10 @@ require '../app/container.php';
 
 $container = $app->getContainer();
 
-//Middleware
+// Middleware
 $app->add(new FlashMiddleware($container->view->getEnvironment()));
 
+// Pages
 $app->get('/', PageController::class . ':home');
 $app->get('/contact', PageController::class . ':getContact')->setName('contact');
 
