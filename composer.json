@@ -1,5 +1,12 @@
 {
+	"autoload": {
+		"psr-4": {
+			"App\\": "app/"
+		}
+	},
     "require": {
-        "slim/slim": "^3.5"
+        "slim/slim": "^3.5",
+		"slim/twig-view": "^2.1",
+		"swiftmailer/swiftmailer": "^5.4"
     }
 }
