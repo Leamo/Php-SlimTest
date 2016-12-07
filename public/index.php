@@ -1,6 +1,7 @@
 <?php
 use App\Controllers\PageController;
 use App\Middlewares\FlashMiddleware;
+use App\Middlewares\OldMiddleware;
 
 // On charge l'autoloader de composer
 require '../vendor/autoload.php';
@@ -20,6 +21,7 @@ $container = $app->getContainer();
 
 // Middleware
 $app->add(new FlashMiddleware($container->view->getEnvironment()));
+$app->add(new OldMiddleware($container->view->getEnvironment()));
 
 // Pages
 $app->get('/', PageController::class . ':home');
