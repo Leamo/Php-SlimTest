@@ -30,8 +30,8 @@ class OldMiddleware
 
 		$response = $next($request, $response);
 
-		// Si l'envoi n'est pas OK (code 200) ...
-		if ($response->getStatusCode() !== 200) {
+		// Si l'envoi présente une erreur (code 400)
+		if ($response->getStatusCode() === 400) {
 			$_SESSION['old'] = $request->getParams();
 		}
 

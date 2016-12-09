@@ -8,6 +8,11 @@ $container['debug'] = function () {
     return true;
 };
 
+// Enregistrement du composant 'csrf' pour la gestion des tokens CSRF
+$container['csrf'] = function ($c) {
+    return new \Slim\Csrf\Guard;
+};
+
 // Enregistrement du composant 'view' qui utilisera Twig
 $container['view'] = function ($container) {
 

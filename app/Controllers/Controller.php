@@ -27,8 +27,8 @@ class Controller
 		$this->container->view->render($response, $file, $params);
 	}
 
-	public function redirect(ResponseInterface $response, $name) {
-		return $response->withStatus(302)->withHeader('Location', $this->router->pathFor($name));
+	public function redirect(ResponseInterface $response, $name, $status = 302) {
+		return $response->withStatus($status)->withHeader('Location', $this->router->pathFor($name));
 	}
 
 	// fonction pour gérer les messages flash (fonctionne avec un MiddleWare)

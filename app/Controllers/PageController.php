@@ -42,6 +42,7 @@ class PageController extends Controller
 		} else {
 			$this->flash('Certains champs n\'ont pas été remplis correctement','error');
 			$this->flash($errors,'errors');
+			return $this->redirect($response, 'contact', 400);
 		}
 
 		

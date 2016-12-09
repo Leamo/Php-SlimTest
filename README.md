@@ -21,6 +21,7 @@ Ce projet a pour but de tester Slim framework
 
 Le Middleware permets d'exécuter du code avant ou après l'application Slim.
 On peut par exemple manipuler facilement les objets Request et Response pour vérifier/modifier des données.
+Attention : l'ordre dans lequel sont appelés les Middlewares est important -> le dernier inscrit sera le premier appelé.
 
 ### [Container](https://www.slimframework.com/docs/concepts/di.html)
 
@@ -28,7 +29,9 @@ Le container peut être récupérer dans toute l'application.
 Il permets de récupérer simplement les objets qui lui sont attribués.
 Le container est appelé avec la variable `$this` 
 
-### Controller
+### [Rooter](https://www.slimframework.com/docs/objects/request.html#route-object)
+
+Le rooter permets de gérer l'affichage et les données affichées en fonction de l'URL donnée.
 
 
 ## Base de Données
